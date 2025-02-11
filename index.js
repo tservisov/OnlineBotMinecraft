@@ -7,7 +7,7 @@ var pi = 3.14159;
 var moveinterval = 2; // 2 second movement interval
 var maxrandom = 5; // 0-5 seconds added to movement interval (randomly)
 
-const mineflayer = require('mineflayer')
+const mineflayer = require('mineflayer');
 const fs = require('fs');
 
 function getData()
@@ -79,7 +79,4 @@ function createBot()
 	bot.on('end', createBot)
 }
 
-createBot()
-
-
-
+createBot();
