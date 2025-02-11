@@ -7,9 +7,11 @@ var pi = 3.14159;
 var moveinterval = 2; // 2 second movement interval
 var maxrandom = 5; // 0-5 seconds added to movement interval (randomly)
 
+const mineflayer = require('mineflayer')
+const fs = require('fs');
+
 function getData()
 {
-	const fs = require('fs');
 	let rawdata = fs.readFileSync('config.json');
 	let data = JSON.parse(rawdata);
 	return data;
@@ -26,7 +28,6 @@ function createBot()
 	var host = data["ip"];
 	var username = data["name"]
 	
-	const mineflayer = require('mineflayer')
 	var bot = mineflayer.createBot({
   		host: host,
   		username: username
