@@ -33,8 +33,6 @@ function createBot()
   		username: username
 	});
 
-	bot.loadPlugin(cmd)
-
 	bot.on('login',function(){
 		console.log("Logged In")
 		bot.chat("Hi")
