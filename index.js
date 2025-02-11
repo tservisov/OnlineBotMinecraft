@@ -1,6 +1,3 @@
-const mineflayer = require('mineflayer')
-const cmd = require('mineflayer-cmd').plugin
-const fs = require('fs')
 var lasttime = -1;
 var moving = 0;
 var connected = 0;
@@ -13,6 +10,7 @@ var maxrandom = 5; // 0-5 seconds added to movement interval (randomly)
 
 function getData()
 {
+	const fs = require('fs')
 	let rawdata = fs.readFileSync('config.json');
 	let data = JSON.parse(rawdata);
 	return data;
@@ -28,7 +26,8 @@ function createBot()
 	var data = getData();
 	var host = data["ip"];
 	var username = data["name"]
-	
+
+	const mineflayer = require('mineflayer')
 	var bot = mineflayer.createBot({
   		host: host,
   		username: username
