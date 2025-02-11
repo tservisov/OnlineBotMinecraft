@@ -1,3 +1,6 @@
+const mineflayer = require('mineflayer')
+const cmd = require('mineflayer-cmd').plugin
+const fs = require('fs')
 var lasttime = -1;
 var moving = 0;
 var connected = 0;
@@ -7,8 +10,6 @@ var pi = 3.14159;
 var moveinterval = 2; // 2 second movement interval
 var maxrandom = 5; // 0-5 seconds added to movement interval (randomly)
 
-const mineflayer = require('mineflayer');
-const fs = require('fs');
 
 function getData()
 {
@@ -32,6 +33,8 @@ function createBot()
   		host: host,
   		username: username
 	});
+
+	bot.loadPlugin(cmd)
 
 	bot.on('login',function(){
 		console.log("Logged In")
