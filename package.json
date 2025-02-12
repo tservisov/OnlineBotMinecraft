@@ -1,7 +1,6 @@
 {
   "name": "afkbot",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
@@ -10,9 +9,22 @@
   "license": "ISC",
   "dependencies": {
     "config": "^3.3.3",
+    "express": "^4.21.2",
     "fs": "0.0.1-security",
     "mineflayer": "^2.37.1",
     "mineflayer-blockfinder": "0.0.7",
     "mineflayer-cmd": "^1.0.2"
-  }
+  },
+  "devDependencies": {
+    "eslint": "^9.20.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tservisov/OnlineBotMinecraft.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tservisov/OnlineBotMinecraft/issues"
+  },
+  "homepage": "https://github.com/tservisov/OnlineBotMinecraft#readme",
+  "description": ""
 }
