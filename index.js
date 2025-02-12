@@ -95,7 +95,10 @@ function createBot()
 	});
 
 	bot.on('playerJoined', function(player){
-		bot.chat(player.username + ", вещь или бан!")
+		if (player.username != username)
+		{
+			bot.chat(player.username + ", вещь или бан!")
+		}
 	});
 }
 
