@@ -6,6 +6,7 @@ var lastaction;
 var pi = 3.14159;
 var moveinterval = 2; // 2 second movement interval
 var maxrandom = 5; // 0-5 seconds added to movement interval (randomly)
+var reconected = false;
 
 
 function getData()
@@ -38,6 +39,7 @@ function createBot()
 	bot.on('login',function(){
 		console.log("Logged In")
 		bot.chat("Hi")
+		reconected = false;
 	});
 
 	bot.on('spawn',function() {
@@ -90,7 +92,11 @@ function createBot()
 	bot.on('end', function(){
 		if(!connected)
 		{
-			setTimeout(createBot, 60000);
+			if (!reconected)
+			{
+				setTimeout(createBot, 60000);
+				reconected = true;
+			}	
 		}
 	});
 
