@@ -25,11 +25,13 @@ function createBot()
 {
 	var data = getData();
 	var host = data["ip"];
+	var port = data["port"];
 	var username = data["name"]
 
 	const mineflayer = require('mineflayer')
 	var bot = mineflayer.createBot({
   		host: host,
+		port: port,
   		username: username
 	});
 
