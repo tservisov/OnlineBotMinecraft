@@ -90,6 +90,7 @@ function createBot()
 	bot.on('end', function(){
 		if(!connected)
 		{
+			bot.waitForTicks(1200);
 			createBot();
 		}
 	});
