@@ -87,7 +87,7 @@ function createBot()
 	    	connected=0;
 	});
 	
-	bot.on('end', ,function(){
+	bot.on('end', function(){
 		if(!connected)
 		{
 			createBot();
