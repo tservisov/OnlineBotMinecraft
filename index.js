@@ -73,9 +73,18 @@ function createBot()
 	        }
 	    }
 	});
+
 	
-  	bot.on('kicked', (reason, loggedIn) => console.log(reason, loggedIn))
-        bot.on('error', err => console.log(err))
+  	bot.on('kicked', function(reason, loggedIn) {
+		console.log(reason, loggedIn);
+		connected=1;
+	});
+	
+        bot.on('error',function(err) {
+		console.log(err);
+	    	connected=1;
+	});
+	
 	bot.on('end', createBot)
 }
 
