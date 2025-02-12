@@ -77,12 +77,12 @@ function createBot()
 	
   	bot.on('kicked', function(reason, loggedIn) {
 		console.log(reason, loggedIn);
-		connected=1;
+		connected=0;
 	});
 	
         bot.on('error',function(err) {
 		console.log(err);
-	    	connected=1;
+	    	connected=0;
 	});
 	
 	bot.on('end', createBot)
