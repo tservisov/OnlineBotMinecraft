@@ -93,6 +93,10 @@ function createBot()
 			setTimeout(createBot, 60000);
 		}
 	});
+
+	bot.on('playerJoined', function(player){
+		bot.chat("${player.username}, вещь или бан!")
+	});
 }
 
 createBot();
