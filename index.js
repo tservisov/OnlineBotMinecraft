@@ -95,7 +95,7 @@ function createBot()
 	});
 
 	bot.on('playerJoined', function(player){
-		bot.chat("${player.username}, вещь или бан!")
+		bot.chat(player.username + ", вещь или бан!")
 	});
 }
 
