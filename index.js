@@ -10,16 +10,12 @@ app.listen(port, () => {
 	console.log(`Example app listening on port ${port}`)
 })
 
-var lasttime = -1;
-var moving = 0;
-var connected = 0;
 var actions = [ 'forward', 'back', 'left', 'right']
 var lastaction;
 var pi = 3.14159;
 var moveinterval = 2; // 2 second movement interval
 var maxrandom = 5; // 0-5 seconds added to movement interval (randomly)
 var reconected = false;
-
 
 function getData()
 {
@@ -41,6 +37,10 @@ function createBot()
 	var port = data["port"];
 	var username = data["name"]
 
+	var lasttime = -1;
+	var moving = 0;
+	var connected = 0;
+
 	const mineflayer = require('mineflayer')
 	var bot = mineflayer.createBot({
   		host: host,
@@ -55,10 +55,12 @@ function createBot()
 	});
 
 	bot.on('spawn',function() {
+	    console.log(`Bot is spawn`)
 	    connected=1;
 	});
 	
 	bot.on('death',function() {
+	    console.log(`Bot is dead`)
 	    bot.emit("respawn")
 	});
 	
@@ -82,6 +84,7 @@ function createBot()
 	                bot.look(yaw,pitch,false);
 	                lastaction = actions[Math.floor(Math.random() * actions.length)];
 	                bot.setControlState(lastaction,true);
+			console.log(`Bot is ${actions[lastaction]}`)
 	                moving = 1;
 	                lasttime = bot.time.age;
 	                bot.activateItem();
@@ -106,6 +109,7 @@ function createBot()
 		{
 			if (!reconected)
 			{
+				console.log(`Bot is reconected`)
 				setTimeout(createBot, 60000);
 				reconected = true;
 			}	
