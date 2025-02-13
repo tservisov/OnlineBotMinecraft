@@ -119,7 +119,22 @@ function createBot()
 	bot.on('playerJoined', function(player){
 		if (player.username != username)
 		{
-			bot.chat(player.username + ", вещь или бан!")
+			if (player.username == 'pisun')
+			{
+				bot.chat(player.username + ', получил очивку: "Гроза лавок и сундуков"')	
+			}
+			if (player.username == 'Sirentino')
+			{
+				bot.chat(player.username + ', получил очивку: "Шашлык не заказывали?"')	
+			}
+			if (player.username == 'Leet')
+			{
+				bot.chat(player.username + ', получил очивку: "Похоронен заживо!"')	
+			}
+			else
+			{
+				bot.chat(player.username + ", вещь или бан!")
+			}
 		}
 	});
 }
