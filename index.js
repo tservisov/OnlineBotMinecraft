@@ -84,7 +84,7 @@ function createBot()
 	                bot.look(yaw,pitch,false);
 	                lastaction = actions[Math.floor(Math.random() * actions.length)];
 	                bot.setControlState(lastaction,true);
-			console.log(`Bot is ${actions[lastaction]}`)
+			console.log(`Bot is ${lastaction}`)
 	                moving = 1;
 	                lasttime = bot.time.age;
 	                bot.activateItem();
