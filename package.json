@@ -13,7 +13,8 @@
     "fs": "0.0.1-security",
     "mineflayer": "^2.37.1",
     "mineflayer-blockfinder": "0.0.7",
-    "mineflayer-cmd": "^1.0.2"
+    "mineflayer-cmd": "^1.0.2",
+    "uuid": "^11.0.5"
   },
   "devDependencies": {
     "eslint": "^9.20.1"
